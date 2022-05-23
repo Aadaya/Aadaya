@@ -1,0 +1,42 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block title %} | Cart {% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/dashboard/noti.css' %}">
+
+
+<section class="section-50">
+    <div class="container">
+        <h3 class="m-b-50 heading-line">Notifications({{ncount}}) <i class="fa fa-bell text-muted"></i></h3>
+
+        <div class="notification-ui_dd-content">
+            {% for noti in noti %}
+            <div class="notification-list notification-list--unread">
+                <div class="notification-list_content">
+<!--                    <div class="notification-list_img">-->
+<!--                        <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">-->
+<!--                    </div>-->
+                    <div class="notification-list_detail">
+                        <h4 style="font-color:blue">{{noti.heading}}</h4>
+                        <p>{{noti.description}}</p>
+                        <p class="text-muted"><small>{{noti.date |date:"d-M-Y"}}</small></p>
+                    </div>
+                </div>
+<!--                <div class="notification-list_feature-img">-->
+<!--                    <img src="https://i.imgur.com/AbZqFnR.jpg" alt="Feature image">-->
+<!--                </div>-->
+            </div>
+            {% endfor %}
+
+
+        </div>
+
+
+
+    </div>
+</section>
+
+
+
+
+ {% endblock %}

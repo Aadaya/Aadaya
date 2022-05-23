@@ -1,0 +1,80 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block title %}
+	order complete
+{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .fs-12 {
+    font-size: 12px
+}
+
+.fs-15 {
+    font-size: 15px
+}
+
+.name {
+    margin-bottom: -2px
+}
+
+.product-details {
+    margin-top: 13px
+}
+</style>
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+            <div class="receipt bg-white p-3 rounded"><img src="{% static 'img/logooo.png' %}" width="120">
+                <h4 class="mt-2 mb-3">Your order is confirmed!</h4>
+                <h6 class="name">Hello {{request.user.first_name}},</h6><span class="fs-12 text-black-50">your order has been confirmed and will be shipped in two days</span>
+                <hr>
+                <div class="d-flex flex-row justify-content-between align-items-center order-details">
+                    <div><span class="d-block fs-12">Order date</span><span class="font-weight-bold">{{order.created_at}}</span></div>
+                    <div><span class="d-block fs-12">Order number</span><span class="font-weight-bold">#{{order_number}}</span></div>
+<!--                    <div><span class="d-block fs-12">Transaction Id</span><span class="font-weight-bold">{{transID}}</span></div>-->
+<!--                    <div><span class="d-block fs-12">Payment method</span><span class="font-weight-bold">Credit card</span><img class="ml-1 mb-1" src="https://i.imgur.com/ZZr3Yqj.png" width="20"></div>-->
+                    <div><span class="d-block fs-12">Shipping Address</span>{{order.full_name}},{{order.full_address}},{{order.city}}</span></div>
+                </div>
+                <hr>
+                {% for item in ordered_products %}
+                <div class="d-flex justify-content-between align-items-center product-details">
+                    <div class="d-flex flex-row product-name-image"><img class="rounded" src="{{item.product.images.url}}" width="80">
+                        <div class="d-flex flex-column justify-content-between ml-2">
+                            <div><span class="d-block font-weight-bold p-name">{{item.product.product_name}}</span>
+
+                               </div><span class="fs-12">Qty : {{item.quantity}}</span>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h5>₹{{subtotal}}</h5>
+                    </div>
+                </div>
+                  {% endfor %}
+                <div class="mt-5 amount row">
+                    <div class="d-flex justify-content-center col-md-6"><img src="https://i.imgur.com/AXdWCWr.gif" width="250" height="100"></div>
+                    <div class="col-md-6">
+                        <div class="billing">
+                            <div class="d-flex justify-content-between"><span>Subtotal</span><span class="font-weight-bold">₹{{subtotal}}</span></div>
+                            <div class="d-flex justify-content-between mt-2"><span>Tax</span><span class="font-weight-bold">₹{{order.tax}}</span></div>
+<!--                            <div class="d-flex justify-content-between mt-2"><span>Tax</span><span class="font-weight-bold">$5</span></div>-->
+
+                            <hr>
+                            <div class="d-flex justify-content-between mt-1"><span class="font-weight-bold">Grand Total</span><span class="font-weight-bold text-success">₹{{order.order_total}}</span></div>
+                        </div>
+                    </div>
+                </div><span class="d-block mt-3 text-black-50 fs-15">We will be sending a shipping confirmation email when the item is shipped!</span>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center footer">
+                    <div class="thanks"><span class="d-block font-weight-bold">Thanks for shopping</span><span>Aadaya Pharmacy</span></div>
+                    <div class="d-flex flex-column justify-content-end align-items-end"><span class="d-block font-weight-bold">Need Help?</span><span>Call -+91 7356139636</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% endblock %}

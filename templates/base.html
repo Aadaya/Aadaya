@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zxx">
+<!--<![endif]-->
+<!-- Begin Head -->
+
+<head>
+      <title>Aadaya Pharmacy {% block title %} {% endblock %}</title>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="MobileOptimized" content="320">
+    <!--Start Style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/fonts.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/icofont.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/style.css' %}">
+    <link rel="stylesheet" id="theme-change" type="text/css" href="#">
+    <!-- Favicon Link -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/dashboard/favicon.png' %}">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="spinner">
+             <img src="{% static 'img/dashboard/loader.gif' %}" alt="" />
+        </div>
+    </div>
+    <!-- Main Body -->
+    <div class="page-wrapper">
+        <!-- Header Start -->
+{% block content %}
+        {% endblock %}
+
+    </div>
+    <!-- Script Start -->
+    <script src="{% static 'js/dashboard/jquery.min.js' %}"></script>
+    <script src="{% static 'js/dashboard/popper.min.js' %}"></script>
+    <script src="{% static 'js/dashboard/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/dashboard/swiper.min.js' %}"></script>
+    <script src="{% static 'js/dashboard/apexcharts.min.js' %}"></script>
+    <script src="{% static 'js/dashboard/control-chart-apexcharts.js' %}"></script>
+    <!-- Page Specific -->
+    <script src="{% static 'js/dashboard/nice-select.min.js' %}"></script>
+    <!-- Custom Script -->
+    <script src="{% static 'js/dashboard/custom.js' %}"></script>
+<!--End of Tawk.to Script-->
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+{% for message in messages %}
+    swal("{{message}}");
+{% endfor %}
+</script>
+</body>
+
+</html>

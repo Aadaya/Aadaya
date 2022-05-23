@@ -1,0 +1,1181 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>PHARMAAFFORD LLP</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon1.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <!-- Bootstrap CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<link href="//db.onlinewebfonts.com/c/0a0fd5faa7a8d8d24e8a0b49c4389a62?family=Ionicons" rel="stylesheet" type="text/css"/>
+  <!-- Vendor CSS Files -->
+
+  <link href="{% static 'css/aos/aos.css' %}" rel="stylesheet">
+
+  <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'css/glightbox/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'css/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/blue.css' %}" rel="stylesheet">
+
+<style>
+
+@media (min-width: 576px) {
+  .modal-dialog  {
+    max-width: 300px;
+
+  }
+  .modal-dialog .modal-content {
+    padding: 1rem;
+    border-radius: 25px;
+  }
+}
+.modal-header .close {
+  margin-top: -1.5rem;
+}
+
+.form-title {
+  margin: -2rem 0rem 2rem;
+}
+
+.btn-round {
+  border-radius: 3rem;
+}
+
+.delimiter {
+  padding: 1rem;
+}
+
+.social-buttons .btn {
+  margin: 0 0.5rem 1rem;
+}
+
+.signup-section {
+  padding: 0.3rem 0rem;
+}
+* {
+  box-sizing: border-box;
+}
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-size: small;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top" style="height:60px;">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="{% static 'img/logo-1.png' %}" alt="">
+<!--        <span>PHARMAAFFORD</span>-->
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#features">Services</a></li>
+
+          <li ><a href="#service">What are Generic Medicine</a>
+
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="#" data-toggle="modal" data-target="#loginModal" >Login</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-title text-center">
+                <img src="{% static 'img/logimage1.jpg' %}" alt="" style="width: 150px; height: 150px;">
+              </div>
+              <div class="d-flex flex-column text-center">
+                  <form action="{% url 'login' %}" method="post">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="Your username...">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Your password...">
+                  </div>
+
+         <input type="submit" class="btn btn-info btn-block btn-round" value="Login">
+                   </form>
+                <div class="modal-footer d-flex justify-content-center">
+                  <div class="text-center"><a href="" data-toggle="modal" data-target="#passwdModal">Forgot Password?</a>
+                  <div class="signup-section mt-2" style="font-size: medium;">Not a member yet? <br><a href="{% url 'reg1' %}" class="text-info" data-toggle="modal" data-target="#regModal"> Sign Up</a>.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+
+
+      <!-- partial -->
+ <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 50%;">
+          <div class="modal-content" style="object-fit: cover; overflow: hidden; width: 100%; height: auto; background-image: url({% static 'img/bg.jpg' %});">
+            <div class="modal-header border-bottom-0">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-title text-center">
+               <h2>New Retailer Registration!</h2>
+              </div>
+              <div class="d-flex flex-column text-center">
+                <form action="{% url 'register' %}" method="post">
+                  {% csrf_token %}
+
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="retailer_name"><b>Pharmacy Name*</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="retailer_name" required name="retailer_name" class="form-control placeholder-no-fix" >
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="email"><b>Email ID *</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="email" required id="email" name="email" class="form-control placeholder-no-fix"  >
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="first_name"><b>Contact Person *</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="first_name" required name="first_name" class="form-control placeholder-no-fix" >
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="phone"><b>Contact No *</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="phone" required name="phone"  class="form-control placeholder-no-fix">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="dl_number1"><b>Drug License No1*</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="dl_number1" required name="dl_number1"  class="form-control placeholder-no-fix">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="dl_number2"><b>Drug License No2*</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="dl_number2" required name="dl_number2" class="form-control placeholder-no-fix">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="dl_expiry_date"><b>Drug License Expiry Date *</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="date" id="dl_expiry_date" required name="dl_expiry_date"class="form-control placeholder-no-fix" >
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="gst"><b>GST/TIN</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="gst" required name="gst" class="form-control placeholder-no-fix">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="state"><b>State</b></label>
+                    </div>
+                    <div class="col-75">
+                      <select id="state" name="state">
+                        <option value="Select">Select</option>
+                        <option value="Kerala">Kerala</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="district"><b>District / City</b></label>
+                    </div>
+                    <div class="col-75">
+                      <select id="district" name="district" >
+                        <option value="Select">Select</option>
+                        <option value="Malappuram">Malappuram</option>
+                        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                        <option value="Ernakulam">Ernakulam</option>
+                        <option value="Thrissur">Thrissur</option>
+                        <option value="Kozhikode">Kozhikode</option>
+                        <option value="Palakkad">Palakkad</option>
+                        <option value="Kollam">Kollam</option>
+                        <option value="Kannur">Kannur</option>
+                        <option value="usa">Alappuzha</option>
+                        <option value="Alappuzha">Kottayam</option>
+                        <option value="Kasaragod">Kasaragod</option>
+                        <option value="Pathanamthitta">Pathanamthitta</option>
+                        <option value="Idukki">Idukki</option>
+                        <option value="Wayanad">Wayanad</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="landmark"><b>Exact Location/Landmark</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="landmark" name="landmark" class="form-control placeholder-no-fix">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="retailer_type"><b>Retailer Type</b></label>
+                    </div>
+                    <div class="col-75">
+                      <select id="retailer_type" name="retailer_type" >
+                        <option value="Select">Select</option>
+                        <option value="Hospital Pharmacy">Hospital Pharmacy</option>
+                        <option value="Medical Store">Medical Store</option>
+                        <option value="Chain Pharmacy">Chain Pharmacy</option>
+                        <option value="FMCG">FMCG</option>
+                        <option value="Others">Others</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="username"><b>Username *</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="username" name="username" class="form-control placeholder-no-fix">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="password"><b>Password *</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="password" id="password" name="password" class="form-control placeholder-no-fix">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="confirm_password"><b>Confirm Password *</b></label>
+                    </div>
+                    <div class="col-75">
+                      <input type="password" id="confirm_password" name="confirm_password" class="form-control placeholder-no-fix">
+                    </div>
+                  </div>
+
+                  <div class="row mt-3" >
+
+                    <input type="submit" style="margin-left: auto; background-color: #71D9CE; width: 100px;" value="Submit">
+<!--                    <input type="submit" class="ml-1" style="background-color: #3657d9; width: 100px;" value="Submit">-->
+                  </div>
+
+
+
+                </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+ </div>
+
+
+
+  <div class="modal fade" id="passwdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 60%; ">
+      <div class="modal-content"
+        style="object-fit: cover; overflow: hidden; width: 100%; height: auto; background-image: url(https://i.pinimg.com/originals/e2/29/81/e22981893f6dc5728e00d7ccf490238e.jpg);">
+        <div class="modal-header border-bottom-0">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-title text-center">
+            <h2>Forgot Password?</h2>
+          </div>
+          <div class="d-flex flex-column text-center">
+            <form action="{% url 'forgotPassword' %}" method="post">
+                {% csrf_token %}
+              <div class="row">
+                <div class="col-25">
+                  <label for="email"><h6>* Enter your Email ID</h6></label>
+                </div>
+                <div class="col-75">
+                  <input type="email" name="email" required >
+                </div>
+              </div>
+
+              <div class="row mt-3">
+
+                <input type="submit" style="margin-left: auto; background-color: #71D9CE; width: 100px;" value="Cancel">
+                <input type="submit" class="ml-1" style="background-color: #71D9CE; width: 100px;" value="Submit">
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container-fluid">
+      <div class="row" style="margin-top:4vh;">
+             <img src="{% static 'img/bn.jpg' %}" style="height:50vh;">
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h3>Who We Are</h3>
+              <h2>We are dedicated<span class="highlight"> creative team</span> trying to enrich the lives of others. </h2>
+              <p style="text-align: justify;">
+            Aadaya pharmacy is an retail chain opened by a group of medical professionals supported by a team of senior Doctors. Our concept is to serve the people with quality medicines at an affordable price. We procure generic medicines with utmost care from branded reputed companies with high quality testing and manufacturing standards. Ensures cost effective and dispensing from our retail chain pharmacies .
+              </p>
+<!--              <div class="text-center text-lg-start">-->
+<!--                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">-->
+<!--                  <span>Read More</span>-->
+<!--                  <i class="bi bi-arrow-right"></i>-->
+<!--                </a>-->
+<!--              </div>-->
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{% static 'img/generic.jpg' %}" class="img-fluid" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+
+      <div class="container" data-aos="fade-up">
+
+
+
+
+
+        <div class="row feature-icons" data-aos="fade-up">
+
+           <header class="section-header">
+          <h2>Services</h2>
+          <p>Services We Provide</p>
+        </header><br>
+          <br>
+
+
+          <div class="row">
+
+            <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
+              <img src="{% static 'img/phar.png' %}" class="img-fluid p-4" alt="">
+            </div>
+
+            <div class="col-xl-8 d-flex content">
+              <div class="row align-self-center gy-4">
+
+                <div class="col-md-6 icon-box" data-aos="fade-up">
+                  <i class="ri-line-chart-line"></i>
+                  <div>
+                    <h4>Quality Medicines Within Reach.</h4>
+                    <p  style="text-align:justify">India is a major producer and exporter of Generic Medicines to advanced nations. Unfortunately, the reach of Generic Medicines within India is very low.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                  <i class="ri-stack-line"></i>
+                  <div>
+                    <h4>Same Formulations,High Quality.</h4>
+                    <p  style="text-align:justify">The Generic Medicines offered by PHARMAAFFORD LLP  from selected branded company. </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                  <i class="ri-brush-4-line"></i>
+                  <div>
+                    <h4>Generic Medicine For Every Chronic Illness.</h4>
+                    <p  style="text-align:justify">Generic Medicines from PHARMAAFFORD LLP is best suited for those suffering from long-term or chronic illnesses like Hypertension, Diabetes, Asthma, Cancer, Heart Disease etc.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                  <i class="ri-magic-line"></i>
+                  <div>
+                    <h4>We Deliver Across Kerala.</h4>
+                    <p  style="text-align:justify">PHARMAAFFORD LLP stores conveniently located in Trivandrum districts can serve customers directly. Our stores are one-stop destination for purchasing the whole range of high-quality and effective Generic Medicines </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                  <i class="ri-command-line"></i>
+                  <div>
+                    <h4>Good Health. Cost less.</h4>
+                    <p  style="text-align:justify">Good health at affordable prices is our key objective. Customer satisfaction and loyalty are our focus areas. With this objective in mind we offer a whole range of quality generic medicines from leading pharmaceutical companies in India.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+                  <i class="ri-radar-line"></i>
+                  <div>
+                    <h4>Fast Product Search</h4>
+                    <p  style="text-align:justify">For retailers medicine search at your figure tips in PHARMAAFFORD LLP. </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div><!-- End Feature Icons -->
+
+      </div>
+
+    </section><!-- End Features Section -->
+
+<section id="service" class="parallax-section-9">
+<div class="container">
+<div class="col-md-12 text-center">
+  <header class="section-header">
+          <h2>Generic Medicine</h2>
+          <p>Why Generic Medicine</p>
+        </header>
+
+<p class="subheading wow fadeInUp" style="text-align:justify">Generic drugs tend to cost less than their brand-name counterparts because generic drug applicants do not have to repeat animal and clinical (human) studies that were required of the brand-name medicines to demonstrate safety and effectiveness.</p>
+</div>
+<div class="row feature-row wow fadeInUp">
+<div class="col-md-4 col-lg-4 col-sm-12 ">
+
+<h6 style="font-weight:bold ;" class="text-center">Why are Generic Medicines less costly?</h6>
+<p class="feature-description"  style="text-align:justify">Once the patent expires, other manufacturers duplicate and market their own versions of the drug. Since the manufacture of these generic drugs do not involve a repeat of the extensive clinical trials to prove their safety and efficacy, it costs less to develop them. Generic drugs are, therefore, cheaper.</p>
+
+</div>
+<div class="col-md-4  col-sm-12  ">
+
+<h6 style="font-weight:bold ;" class="text-center">What are branded medicines?</h6>
+<p class="feature-description"  style="text-align:justify">Branded Medicine is the name.given by the producing company .They are approved by fda . Branded medicine are prescribed by doctor.The branded medicine and generic medicines look the same , they have the same content as of the branded medicine. These are generally expensive.Its
+  originally discovered and developed by a pharmaceutical company.</p>
+
+</div>
+<div class="col-md-4 col-lg-4 col-sm-12  f">
+
+<h6 style="font-weight:bold ;" class="text-center">What are Generic Medicines?</h6>
+<p class="feature-description"  style="text-align:justify">A generic medicine is one which is duplicate or same form of brand named drugs . these are those drugs  which imitate the branded drugs. they must have food and drug administration approval for sale and consumption purpose. you would buy  them through either online or any local pharmacy nearby you. they have the same strength , effect of the branded drugs.they are sold under different brand names, but will contain the same active ingredients as the brand-name drug. when the patent of Brand name medicine expires the generic version of the same medicine is manufactured by many leading pharmaceuticals.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+ <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>F.A.Q</h2>
+          <p>Frequently Asked Questions</p>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <!-- F.A.Q List 1-->
+            <div class="accordion accordion-flush" id="faqlist1">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                    What are generic drugs?
+                  </button>
+                </h2>
+                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+      A generic medicine is a medicine that is an equivalent substitute to a brand-name drug. Generic medicines contain the same active ingredient(s) as the original brand products, and are available in the same strengths and dosage forms as the originals. A generic drug works the same way in your body as the brand-name drug.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                    Why do generic medicines often cost less than the brand?
+                  </button>
+                </h2>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                Generic drugs tend to cost less than their brand-name counterparts because generic drug applicants do not have to repeat animal and clinical (human) studies that were required of the brand-name medicines to demonstrate safety and effectiveness. This abbreviated pathway is why the application is called an “abbreviated new drug application.”
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                   Why does a generic drug look different from the brand drug?
+                  </button>
+                </h2>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+           Generic medicines and brand-name medicines share the same active ingredient, but other characteristics, such as colors and flavorings, that do not affect the performance, safety, or effectiveness of the generic medicine, may be different.
+
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+
+            <!-- F.A.Q List 2-->
+            <div class="accordion accordion-flush" id="faqlist2">
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
+                   How genuine are generic drugs?
+                  </button>
+                </h2>
+                <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+             A generic drug ismarketed and sold only afterit fulfils all FDA standards. It is ensured that its safety and effectiveness match the brand name drug it substitutes.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
+                   Will a generic medicine look like its brand-name equivalent?
+                  </button>
+                </h2>
+                <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+            Typically it will not. That's because the appearance of a brand-name drug may be proprietary to the original manufacturer, so the generic product might be required to be a different shape or color. But the active or key ingredient(s) must be the same.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
+                     Are generic drugs as safe as brand name drugs?
+                  </button>
+                </h2>
+                <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+     Yes. The FDA must first approve all generic drugs before they are marketed. The FDA requires that generic drugs must be as high in quality, and as strong, pure and stable as brand name drugs. Generic drugs use the same active ingredients as brand name drugs and work the same way. They have the same risks and the same benefits as the brand name drugs.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End F.A.Q Section -->
+
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Special Features</h2>
+          <p>Making Medicines Cost-Effective.</p>
+        </header>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-box blue">
+              <i class="ri-discuss-line icon"></i>
+              <h3>24X7 Order placing</h3>
+              <p>Place orders any time to your favourite Stockist including Sundays.</p>
+<!--              <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>-->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-box blue">
+              <i class="ri-discuss-line icon"></i>
+              <h3>Easy Product Search</h3>
+              <p> Quick Product search and stock availability information for retailers.</p>
+<!--              <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>-->
+            </div>
+          </div>
+
+
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-box blue">
+              <i class="ri-discuss-line icon"></i>
+              <h3>Home Delivery</h3>
+              <p>(Coming Soon)</p>
+<!--              <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>-->
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+    </section><!-- End Services Section -->
+
+
+<section id="quote" class="parallax-section-6">
+<div class="container">
+<div class="row wow fadeInUp">
+<div class="col-lg-12 wow fadeInUp" style="z-index:3">
+<div id="quote-slider" class="owl-carousel">
+<div>
+<blockquote>
+<i class="icon-left ion-quote ion-2x highlight"></i>
+<span> To Know more about BRP(Budget Retail Price), Please visit/Call/WhatsApp us(+91 7356139636/+91 7356913693)</span>
+<i class="icon-right ion-quote ion-2x highlight"></i>
+</blockquote>
+<h4 class="quote-author highlight">PHARMAAFFORD LLP</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<!--    &lt;!&ndash; ======= Portfolio Section ======= &ndash;&gt;-->
+<!--    <section id="portfolio" class="portfolio">-->
+
+<!--      <div class="container" data-aos="fade-up">-->
+
+<!--        <header class="section-header">-->
+<!--          <h2>Gallery</h2>-->
+<!--          <p>Inauguration Photos</p>-->
+<!--        </header>-->
+
+<!--        <div class="row" data-aos="fade-up" data-aos-delay="100">-->
+<!--          <div class="col-lg-12 d-flex justify-content-center">-->
+<!--            <ul id="portfolio-flters">-->
+<!--              <li data-filter="*" class="filter-active">All</li>-->
+<!--              <li data-filter=".filter-app">App</li>-->
+<!--              <li data-filter=".filter-card">Card</li>-->
+<!--              <li data-filter=".filter-web">Web</li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">-->
+
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-app">-->
+<!--            <div class="portfolio-wrap">-->
+<!--              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">-->
+<!--              <div class="portfolio-info">-->
+
+<!--                <div class="portfolio-links">-->
+<!--                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" ><i class="bi bi-plus"></i></a>-->
+
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-web">-->
+<!--            <div class="portfolio-wrap">-->
+<!--              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">-->
+<!--              <div class="portfolio-info">-->
+
+<!--                <div class="portfolio-links">-->
+<!--                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>-->
+
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-app">-->
+<!--            <div class="portfolio-wrap">-->
+<!--              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">-->
+<!--              <div class="portfolio-info">-->
+
+<!--                <div class="portfolio-links">-->
+<!--                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" ><i class="bi bi-plus"></i></a>-->
+
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-card">-->
+<!--            <div class="portfolio-wrap">-->
+<!--              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">-->
+<!--              <div class="portfolio-info">-->
+
+<!--                <div class="portfolio-links">-->
+<!--                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>-->
+
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-web">-->
+<!--            <div class="portfolio-wrap">-->
+<!--              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">-->
+<!--              <div class="portfolio-info">-->
+
+<!--                <div class="portfolio-links">-->
+<!--                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" ><i class="bi bi-plus"></i></a>-->
+
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-app">-->
+<!--            <div class="portfolio-wrap">-->
+<!--              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">-->
+<!--              <div class="portfolio-info">-->
+
+<!--                <div class="portfolio-links">-->
+<!--                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>-->
+
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-card">-->
+<!--            <div class="portfolio-wrap">-->
+<!--              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">-->
+<!--              <div class="portfolio-info">-->
+
+<!--                <div class="portfolio-links">-->
+<!--                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" ><i class="bi bi-plus"></i></a>-->
+
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-card">-->
+<!--            <div class="portfolio-wrap">-->
+<!--              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">-->
+<!--              <div class="portfolio-info">-->
+
+<!--                <div class="portfolio-links">-->
+<!--                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" ><i class="bi bi-plus"></i></a>-->
+
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-web">-->
+<!--            <div class="portfolio-wrap">-->
+<!--              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">-->
+<!--              <div class="portfolio-info">-->
+<!--&lt;!&ndash;                <h4>Web 3</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Web</p>&ndash;&gt;-->
+<!--                <div class="portfolio-links">-->
+<!--                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" ><i class="bi bi-plus"></i></a>-->
+<!--&lt;!&ndash;                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>&ndash;&gt;-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+
+<!--      </div>-->
+
+<!--    </section>&lt;!&ndash; End Portfolio Section &ndash;&gt;-->
+
+
+
+
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Our Clients</h2>
+          <p>We Deal With</p>
+        </header>
+
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="{% static 'img/clients/ajanta_pharma_ltd.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/daxia_healthcare_logo.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/dr_morepen.png" class="img-fluid' %}" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/intas_pharmaceuticals.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/knoll.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/sbs_biotech.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/steris_healthcare.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/sun-pharma-logo.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/wockhardt.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'img/clients/cipla.png' %}" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+    </section><!-- End Clients Section -->
+<section id="call-to-action-1">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<h3 class="section-title wow fadeInUp"> Become a Franchise </h3>
+<p class="subheading wow fadeInUp">That actually serves HUMANITY.</p>
+<p class="wow fadeInUp" style="text-align:justify">We will be opening up opportunity for licensed pharmacists and entrepreneurs to become our franchise partners and healthcare associates. This could require a Showroom Space of not less than 200 sq ft facing a major road in your
+city of choice across Kerala. PHARMAAFFORD LLP is involved in the distribution of Generic Medicines. All of our associates will be underpinned by transparency, innovation and high standards of quality and service. We train
+and recruit your personel. We offer a sustained and profitable business model that delivers a comfortable return on your investments. Our branding, advertising and promotions will benefit your showroom and help you achieve
+your sales targets.</p>
+<p class="subheading wow fadeInUp">Opportunity of a Lifetime.</p>
+<p class="wow fadeInUp" style="text-align:justify">PHARMAAFFORD LLP is an opportunity for entrepreneurs who are socially conscious and wish to do good for the society and connect with the community. The PHARMAAFFORD LLP showroom run by you will meet the critical healthcare needs
+of a large section of the people in your region.</p>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Contact</h2>
+          <p>Contact Us</p>
+        </header>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Address</h3>
+                  <p>Aadaya Pharmacy (A division of Pharmaafford LLP) <br>Sreekaryam, Trivandrum.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Call Us</h3>
+                  <p>+91 7356139636<br>+91 7356913693</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>pharmaaffordllp@gmail.com<br>pharmaaffordllp@gmail.com</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-clock"></i>
+                  <h3>Open Hours</h3>
+                  <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form action="{% url 'contact_us' %}" method="post" class="php-email-form">
+              {% csrf_token %}
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Contact Section -->
+
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="assets/img/logo-1.png" alt="">
+
+            </a>
+            <p> Aadaya Pharmacy is an organisation with the concept of serving  most valued and trusted medicines in cost effective</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href=#hero">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#features">Services</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#clients">Clients</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#testimonials">Testimonials</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">Portfolio</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#faq">Faq</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#services">Features</a></li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contact Us</h4>
+            <p>
+              Aadaya Pharmacy (A division of Pharmaafford LLP) <br>
+              Sreekaryam, Trivandrum.<br>
+              Kerala <br><br>
+              <strong>Phone:</strong> +91 7356139636, 7356913693<br>
+              <strong>Email:</strong> pharmaaffordllp@gmail.com<br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>PHARMAAFFORD LLP</span></strong>. All Rights Reserved
+      </div>
+
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<!--<a href="https://api.whatsapp.com/send?phone=919895411835&text=Hi" class="float" target="_blank">-->
+<!--<i class="fa fa-whatsapp my-float"></i>-->
+<!--</a>-->
+  <a class="call_btn" href="tel:+917356139636" target=""></a>
+<a class="whatsapp_btn" href="https://api.whatsapp.com/send?phone=917356139636" target="_blank"></a>
+
+<script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+  <!-- Vendor JS Files -->
+  <script src="{% static 'js/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'js/aos/aos.js' %}"></script>
+  <script src="{% static 'js/glightbox/glightbox.min.js' %}"></script>
+  <script src="{% static 'js/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/swiper/swiper-bundle.min.js' %}"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+ <script src="https://kit.fontawesome.com/cda77fc7d1.js" crossorigin="anonymous"></script>
+  <style media="all" id="fa-v4-font-face"></style>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/628afa5fb0d10b6f3e738437/1g3ne42am';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+{% for message in messages %}
+    swal("{{message}}");
+{% endfor %}
+</script>
+</body>
+
+</html>

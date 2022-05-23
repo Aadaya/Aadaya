@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} | Waiting for approval{% endblock %}
+{% block content %}
+
+ <div class="page-wrapper">
+        <!-- Header Start -->
+
+        <div class="container">
+            <div class="row mt-5">
+                <div class="card col-lg-8 offset-2" style="background-color: gainsboro; margin-top: 20vh;">
+                    <br>
+                  <h4 class="text-success">Aadaya Pharmacy Registration</h4>
+                  <br>
+               <p>User registered successfully.</p>
+<!--                          <p>Your login credentials are sent to your mail.</p>-->
+                          <p align="justify">You will be able to login once the request is approved</p>
+                                              <p align="justify"><a href="{% url 'index' %}" style="text-decoration: none;"><b>Click here</b></a> to go home</p>
+                    <br>
+                    <br>
+              </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

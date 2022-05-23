@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    table,
+    td {
+      border: 0px solid black;
+      border-collapse: collapse;
+      font-size: small;
+      margin: 2px;
+      width: 40%;
+      padding: 5px 10px;
+
+    }
+
+    h5 {
+      padding-left: 5px;
+    }
+  </style>
+
+</head>
+
+<body bgcolor="#F2F2F2">
+
+  <img src="http://essbee.pythonanywhere.com/static/img/logo/shop5.png" width="70">
+  <h5 style="font-size: 18px;">Your order Confirmed!</h5>
+  <span style="padding-left: 4px; font-size: small;"><b>Hello, {{user.first_name}},</b></span><br>
+  <p style="padding-left: 12px; font-size: 15px;">You order has been confirmed .</p>
+
+
+  <table style="width: 95%; border: 2px solid black; background-color: white; ">
+    <tbody style="border: 1px solid black;">
+
+    <tr>
+      <td style="padding-left: 21px; font-size: 15px;"><b>Order Date</b></td>
+      <td style="font-size: 15px; padding: auto;"><b>Order No</b></td><td style="font-size: 15px; "><b>Shipping Address</b></td>
+    </tr>
+    <tr>
+      <td style="padding-left: 21px; ">{{ order.created_at }}</td>
+      <td style="padding: auto;">#{{ order_number }}</td>
+
+        <td style="padding: auto;">{{user.first_name}}<br>{{user.phone_number}}<br>{{order.full_address}}<br>{{order.city}}<br>{{ order.district}},{{order.state}} - {{ order.pincode }}<br>{{order.country}}</td>
+    </tr>
+
+    </tbody>
+    <tbody style="border: 1px solid black;">
+    {% for product in ordered_products %}
+    <tr>
+
+      <td style="padding-left: 10px;"> <span>{{ product.product.product_name }}</span><br>
+
+      </td>
+
+      <td width="20%">
+        <span>₹ {{subtotal}}</span>
+      </td>
+    </tr>
+      {% endfor %}
+</tbody>
+    <tr >
+      <td width="30%"> </td>
+      <td style="padding-left: 10px;"> <span class="font-weight-bold">Subtotal</span><br>
+      </td>
+      <td width="20%">
+        <span>₹ {{subtotal}}</span>
+      </td>
+    </tr>
+    <tr>
+      <td width="30%"> </td>
+      <td style="padding-left: 10px;"> <span class="font-weight-bold">Gst</span><br>
+      </td>
+      <td width="20%">
+        <span>₹{{order.tax}}</span>
+      </td>
+    </tr>
+
+
+    <tr style="border: 2px solid black;">
+      <td width="30%" > </td>
+      <td style="padding-left: 10px; font-size: large;"> <span class="font-weight-bold">Grand Total</span><br>
+      </td>
+      <td width="20%">
+
+        <span style="font-size: large;"><b>₹{{order.order_total}}</b></span>
+      </td>
+    </tr>
+
+    <tr></tr>
+    </tbody>
+  </table>
+  <p style="padding-left: 12px; font-size: 15px;">We will be sending shipping confirmation email when the item shipped
+    successfully!</p>
+  <p style="padding-left: 12px; font-size: 15px;">Thanks for shopping with us!</p>
+  <P style="padding-left: 12px;">Aadaya Pharmacy</P>
+  <p style="padding-left: 12px; font-size: 15px;">Need Help? visit our <a href="#"> help center</a></p>
+
+
+
+</body>
+
+</html>

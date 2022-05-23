@@ -1,0 +1,166 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block title %} | Orders{% endblock %}
+{% block content %}
+                <div class="row">
+                    <div class="colxl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-title-wrapper">
+                            <div class="page-title-box">
+                                <h4 class="page-title bold">Order List</h4>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Products Orders Start -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card chart-card">
+
+                            <div class="card-body pb-4">
+                                <div class="chart-holder">
+                                    <div class="table-responsive">
+                                        <table class="table table-styled mb-0">
+                                            <thead>
+                                                <tr>
+
+                                                    <th>Order Number</th>
+
+                                                    <th>Order Date</th>
+
+                                                    <th>Bill Amount</th>
+                                                    <th>Status</th>
+                                                    <th>Remarks</th>
+                                                    <th>View</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                    {% for order in orders %}
+                                                <tr>
+
+                                                    <td>{{order.order_number}}</td>
+
+                                                    <td>{{order.created_at}}</td>
+
+                                                    <td> {{order.order_total}}</td>
+                                                    <td>{{order.status}}</td>
+                                                    {% if order.order_note %}
+                                                      <td>{{order.order_note}}</td>
+                                                    {% else %}
+                                                     <td>No Remarks</td>
+                                                    {% endif %}
+                                                    <td><a href="{% url 'order_detail' order.order_number %}"><i class="fa-solid fa-eye" ></i></a> </td>
+
+                                                </tr>
+
+                                        {% endfor %}
+                                            </tbody>
+                                        </table>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <!-- The Modal -->
+                  <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header float-right">
+                                <h5>Order Details - SO/02519/22-23</h5>
+                                <div class="text-right"> <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i> </div>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Sl.</th>
+                                                <th scope="col">Drug Code</th>
+                                                <th scope="col">Items</th>
+                                                <th scope="col">Order.Qty</th>
+                                                <th scope="col">App.Qty</th>
+                                                <th scope="col">Rate</th>
+                                                <th scope="col">Net Rate</th>
+                                                <th scope="col">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>1</td>
+                                                <td>Aceclofenac 100mg and Paracetamol 325mg Tablets</td>
+                                                <td>2 stp</td>
+                                                <td></td>
+                                                <td>7.1400</td>
+                                                <td>8.0000</td>
+                                                <td>16.0000</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>2</td>
+                                                <td>Aceclofenac Tablets IP 100 mg</td>
+                                                <td>2 stp</td>
+                                                <td></td>
+                                                <td>5.0000</td>
+                                                <td>5.6000</td>
+                                                <td>11.2000	</td>
+                                            </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="container">
+                                        <div class="row ">
+                                            <div class="col">
+                                            <textarea name="remarks" id="remarks" placeholder="Remarks" cols="60" rows="4"></textarea>
+                                        </div>
+                                        <div class=" col">
+                                           <table>
+                                               <thead>
+                                                   <th><b>Subtotal</b></th>
+                                                   <th><b>27.2000</b></th>
+                                               </thead>
+                                               <tbody>
+                                                   <tr>
+                                                       <td><b>CGST</b></td>
+                                                       <td>0.0000</td>
+                                                   </tr>
+                                                   <tr>
+                                                       <td><b>SGST</b></td>
+                                                       <td>0.0000</td>
+                                                   </tr>
+                                                   <tr>
+                                                       <td><b>CESS</b></td>
+                                                       <td>0.0000</td>
+                                                   </tr>
+                                                   <tr>
+                                                       <td><b>KFCESS</b></td>
+                                                       <td>0.0000</td>
+                                                   </tr>
+                                                   <tr>
+                                                       <td><b>Round Off</b></td>
+                                                       <td></td>
+                                                   </tr>
+                                                   <tr>
+                                                       <td><b>Total</b></td>
+                                                       <td>27.2000</td>
+                                                   </tr>
+                                               </tbody>
+                                           </table>
+
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save</button> </div>
+                        </div>
+                    </div>
+                  </div>
+
+     {% endblock %}
